@@ -1,12 +1,14 @@
 package Resources;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class Base {
 
-	WebDriver driver;
+	public WebDriver driver;
 	
 	public void browserSetup(String browser) {
 		if(browser.contains("chrome")){
@@ -17,5 +19,6 @@ public class Base {
 			System.setProperty("webdriver.gecko.driver", "C:\\Selenium Folder\\geckodriver.exe");
 			this.driver = new FirefoxDriver();
 		}
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
 }
