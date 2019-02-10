@@ -2,12 +2,12 @@
 <testng-results total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2019-02-09T06:56:13Z" name="Suite" finished-at="2019-02-09T06:57:00Z" duration-ms="46681">
+  <suite started-at="2019-02-10T05:02:08Z" name="Suite" finished-at="2019-02-10T05:02:42Z" duration-ms="34743">
     <groups>
     </groups>
-    <test started-at="2019-02-09T06:56:13Z" name="Test" finished-at="2019-02-09T06:57:00Z" duration-ms="46681">
+    <test started-at="2019-02-10T05:02:08Z" name="Test" finished-at="2019-02-10T05:02:42Z" duration-ms="34743">
       <class name="FlightBooking.BookingTest">
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:FlightBooking.BookingTest@49e5f737]" started-at="2019-02-08T22:56:13Z" name="setup" finished-at="2019-02-08T22:56:42Z" duration-ms="29144" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:FlightBooking.BookingTest@49e5f737]" started-at="2019-02-09T21:02:08Z" name="setup" finished-at="2019-02-09T21:02:25Z" duration-ms="17535" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,7 +18,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="roundTripBooking()[pri:0, instance:FlightBooking.BookingTest@49e5f737]" started-at="2019-02-08T22:56:42Z" name="roundTripBooking" finished-at="2019-02-08T22:57:00Z" duration-ms="17469" status="FAIL">
+        <test-method signature="roundTripBooking()[pri:0, instance:FlightBooking.BookingTest@49e5f737]" started-at="2019-02-09T21:02:25Z" name="roundTripBooking" finished-at="2019-02-09T21:02:42Z" duration-ms="17156" status="FAIL">
           <exception class="org.openqa.selenium.ElementNotVisibleException">
             <message>
               <![CDATA[element not interactable
@@ -28,8 +28,8 @@ Command duration or timeout: 0 milliseconds
 Build info: version: '3.7.0', revision: '2321c73', time: '2017-11-02T22:22:35.584Z'
 System info: host: 'TES-PC', ip: '192.168.1.7', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '9.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.45.615291 (ec3682e3c9061c..., userDataDir: C:\Users\tes\AppData\Local\...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:58734}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
-Session ID: f3a634b633a894511bc89d6fad1a05d2]]>
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.45.615291 (ec3682e3c9061c..., userDataDir: C:\Users\tes\AppData\Local\...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:49588}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
+Session ID: 8f197a51b1d08d328b07559e04978e9e]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.ElementNotVisibleException: element not interactable
@@ -39,8 +39,8 @@ Command duration or timeout: 0 milliseconds
 Build info: version: '3.7.0', revision: '2321c73', time: '2017-11-02T22:22:35.584Z'
 System info: host: 'TES-PC', ip: '192.168.1.7', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '9.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.45.615291 (ec3682e3c9061c..., userDataDir: C:\Users\tes\AppData\Local\...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:58734}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
-Session ID: f3a634b633a894511bc89d6fad1a05d2
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.45.615291 (ec3682e3c9061c..., userDataDir: C:\Users\tes\AppData\Local\...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:49588}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 71.0.3578.98, webStorageEnabled: true}
+Session ID: 8f197a51b1d08d328b07559e04978e9e
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
@@ -55,7 +55,7 @@ Session ID: f3a634b633a894511bc89d6fad1a05d2
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:600)
 	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:279)
 	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:83)
-	at FlightBooking.BookingTest.roundTripBooking(BookingTest.java:43)
+	at FlightBooking.BookingTest.roundTripBooking(BookingTest.java:47)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)

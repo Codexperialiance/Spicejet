@@ -12,7 +12,7 @@ public class HomePage {
 	By toTextbox = By.id("ControlGroupSearchView_AvailabilitySearchInputSearchViewdestinationStation1_CTXT");
 	By to = By.id("ControlGroupSearchView_AvailabilitySearchInputSearchViewdestinationStation1_CTNR");
 	By departingTextbox = By.id("custom_date_picker_id_1");
-	By departingDate = By.id("//div[@class='ui-datepicker-group ui-datepicker-group-first']//div[@class='ui-datepicker-title'][1]");
+	By departingDate = By.id("//*[@id='ui-datepicker-div']//div[@class='ui-datepicker-group ui-datepicker-group-first']");
 	By datefinder = By.xpath("//div[@class='ui-datepicker-group ui-datepicker-group-first']");
 	By returningDate = By.id("custom_date_picker_id_2");
 	By noOfPassengers = By.id("divpaxinfo");
