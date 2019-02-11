@@ -19,6 +19,6 @@ public class Base {
 			System.setProperty("webdriver.gecko.driver", "C:\\Selenium Folder\\geckodriver.exe");
 			this.driver = new FirefoxDriver();
 		}
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
 	}
 }

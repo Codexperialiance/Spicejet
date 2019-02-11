@@ -31,8 +31,11 @@ public class BookingTest extends Base{
 	@Test
 	public void roundTripBooking() throws InterruptedException {
 		String origin = "Bengaluru (BLR)";
-		String destination = "Mumbai (BOM)";
-		String departingDate = "18-02-2019";
+		String destination = "BOM";
+		String departingDate = "23";
+		String departingMonth = "May";
+		String departingYear = "2019";
+
 		String returningDate = "08-03-2019";
 		String travelOption = "RoundTrip";
 		String currency = "USD";
@@ -40,30 +43,37 @@ public class BookingTest extends Base{
 		hp.getTravelOptions().findElement(By.xpath("//input[@value='"+travelOption+"']")).click();
 		hp.getFrom().click();
 		hp.getFrom().findElement(By.xpath("//a[@text='"+origin+"']")).click();
-		
-		hp.getToTextBox().click();
+		WebElement element=hp.getTo().findElement(By.xpath("//a[@value='BOM']"));
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeScript("arguments[0].click();", element);
+	
+		flightDateFinder(departingDate, departingMonth, departingYear);
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//*[@id='ControlGroupSearchView_AvailabilitySearchInputSearchViewdestinationStation1_CTNR']//*[text()=' Mumbai (BOM)']")).click();
-		hp.getTo().findElement(By.xpath("//*[text()=' "+destination+"']")).click();
-		hp.getDepartingTextbox().click();
-		Thread.sleep(3000);
-		//WebElement year = hp.getDepartingDate().findElement(By.xpath("//*[@id='ui-datepicker-div']//div[@class='ui-datepicker-group ui-datepicker-group-first']//*[@class='ui-datepicker-year']"));
-		//WebElement month = hp.getDepartingDate().findElement(By.xpath("//*[@id='ui-datepicker-div']//div[@class='ui-datepicker-group ui-datepicker-group-first']//*[@class='ui-datepicker-month']"));
-	    
-	   /*
-		while(year.getText().contains("2019") && month.getText().contains("February")) {
-				hp.getDepartingDatePicker().findElement(By.xpath("//*[@a[title='Next']")).click();
+		hp.getReturningDate().click();
+		flightDateFinder(departingDate, departingMonth, departingYear);
+	}
+
+	public void flightDateFinder(String departingDate, String departingMonth, String departingYear) {
+		int flag = 0;
+		while(flag==0) {
+			WebElement yy;
+			yy = hp.getYearPicker();
+			if(yy.getText().equalsIgnoreCase(departingYear)) {
+				flag=1;
+				break;
+			}
+			hp.getNext().click();
 		}
-		if(year.getText().contains("2019") && month.getText().contains("February")){	*/
-			WebElement element = hp.getDepartingDate().findElement(By.xpath("//table//*[text()='28']"));
-			Thread.sleep(5000);
-			JavascriptExecutor js = (JavascriptExecutor)driver;
-			js.executeScript("arguments[0].click();", element);
-		//}
+		while(flag==1) {
+			WebElement mm;
+			mm = hp.getMonthPicker();
+			if(mm.getText().equalsIgnoreCase(departingMonth)) {
+				flag=0;
+				break;
+			}
+			hp.getNext().click();		
+			}
 		
-		Select select = new Select(hp.getCurrency());
-		select.selectByValue(currency);
-		hp.getSearchBtn().click();
-		
+		hp.getDatePicker().findElement(By.xpath("//*//a[text()='"+departingDate+"']")).click();
 	}
 }
