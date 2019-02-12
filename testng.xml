@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
+<listeners>
+	<listener class-name="FlightBooking.Listeners"></listener>
+</listeners>
 <parameter name="browser" value="chrome"></parameter>
+<parameter name="origin" value="Bengaluru (BLR)"></parameter>
+<parameter name="destination" value="BOM"></parameter>
+<parameter name="departingDate" value="23"></parameter>
+<parameter name="departingMonth" value="May"></parameter>
+<parameter name="departingYear" value="2019"></parameter>
+<parameter name="returningDate" value="3"></parameter>
+<parameter name="returningMonth" value="July"></parameter>
+<parameter name="returningYear" value="2019"></parameter>
+<parameter name="travelOption" value="RoundTrip"></parameter>
+<parameter name="currency" value="USD"></parameter>
+<parameter name="dicountPromo" value="student"></parameter>
+<parameter name="expectedPass" value="3"></parameter>
   <test thread-count="5" name="Test">
     <classes>
         <class name="FlightBooking.BookingTest"/>

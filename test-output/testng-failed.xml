@@ -1,12 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <parameter name="origin" value="Bengaluru (BLR)"/>
+  <parameter name="destination" value="BOM"/>
+  <parameter name="departingYear" value="2019"/>
+  <parameter name="returningDate" value="03"/>
+  <parameter name="departingDate" value="23"/>
+  <parameter name="dicountPromo" value="student"/>
+  <parameter name="travelOption" value="RoundTrip"/>
   <parameter name="browser" value="chrome"/>
+  <parameter name="departingMonth" value="May"/>
+  <parameter name="currency" value="USD"/>
+  <parameter name="expectedPass" value="3"/>
+  <parameter name="returningYear" value="2019"/>
+  <parameter name="returningMonth" value="July"/>
   <test name="Test(failed)">
     <classes>
       <class name="FlightBooking.BookingTest">
         <methods>
-          <include name="roundTripBooking"/>
+          <include name="roundTripBooking" invocation-numbers="0"/>
           <include name="setup"/>
         </methods>
       </class> <!-- FlightBooking.BookingTest -->

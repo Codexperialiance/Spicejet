@@ -101,7 +101,7 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="FlightBooking.BookingTest" class="method navigator-link" hash-for-method="roundTripBooking">roundTripBooking</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="FlightBooking.BookingTest" class="method navigator-link" hash-for-method="roundTripBooking(RoundTrip, Bengaluru (BLR), BOM, 23, May, 2019, 3, July, 2019, 3, USD, student)">roundTripBooking(RoundTrip, Bengaluru (BLR), BOM, 23, May, 2019, 3, July, 2019, 3, USD, student)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -124,9 +124,10 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="roundTripBooking">
-                  </a> <!-- roundTripBooking -->
+                  <a name="roundTripBooking(RoundTrip, Bengaluru (BLR), BOM, 23, May, 2019, 3, July, 2019, 3, USD, student)">
+                  </a> <!-- roundTripBooking(RoundTrip, Bengaluru (BLR), BOM, 23, May, 2019, 3, July, 2019, 3, USD, student) -->
                   <span class="method-name">roundTripBooking</span>
+                  <span class="parameters">(RoundTrip, Bengaluru (BLR), BOM, 23, May, 2019, 3, July, 2019, 3, USD, student)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -141,7 +142,22 @@
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+  &lt;parameter name=&quot;origin&quot; value=&quot;Bengaluru (BLR)&quot;/&gt;
+  &lt;parameter name=&quot;destination&quot; value=&quot;BOM&quot;/&gt;
+  &lt;parameter name=&quot;departingYear&quot; value=&quot;2019&quot;/&gt;
+  &lt;parameter name=&quot;returningDate&quot; value=&quot;3&quot;/&gt;
+  &lt;parameter name=&quot;departingDate&quot; value=&quot;23&quot;/&gt;
+  &lt;parameter name=&quot;dicountPromo&quot; value=&quot;student&quot;/&gt;
+  &lt;parameter name=&quot;travelOption&quot; value=&quot;RoundTrip&quot;/&gt;
   &lt;parameter name=&quot;browser&quot; value=&quot;chrome&quot;/&gt;
+  &lt;parameter name=&quot;departingMonth&quot; value=&quot;May&quot;/&gt;
+  &lt;parameter name=&quot;currency&quot; value=&quot;USD&quot;/&gt;
+  &lt;parameter name=&quot;expectedPass&quot; value=&quot;3&quot;/&gt;
+  &lt;parameter name=&quot;returningYear&quot; value=&quot;2019&quot;/&gt;
+  &lt;parameter name=&quot;returningMonth&quot; value=&quot;July&quot;/&gt;
+  &lt;listeners&gt;
+    &lt;listener class-name=&quot;FlightBooking.Listeners&quot;/&gt;
+  &lt;/listeners&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;FlightBooking.BookingTest&quot;/&gt;
@@ -188,12 +204,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'roundTripBooking')
 data.setCell(0, 2, 'FlightBooking.BookingTest')
-data.setCell(0, 3, 9578);
+data.setCell(0, 3, 20216);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 9 seconds</span>
+              <span class="suite-total-time">Total running time: 20 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -225,8 +241,8 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="test-method">
-                <span class="method-name">roundTripBooking</span>
-                <span class="method-start">10191 ms</span>
+                <span class="method-name">roundTripBooking(RoundTrip, Bengaluru (BLR), BOM, 23, May, 2019, 3, July, 2019, 3, USD, student)</span>
+                <span class="method-start">11593 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

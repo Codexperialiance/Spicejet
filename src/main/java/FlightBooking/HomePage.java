@@ -9,21 +9,19 @@ public class HomePage {
 	WebDriver driver;
 	By travelOptions = By.id("travelOptions");
 	By from = By.id("ControlGroupSearchView_AvailabilitySearchInputSearchVieworiginStation1_CTXT");
-	By toTextbox = By.id("ControlGroupSearchView_AvailabilitySearchInputSearchViewdestinationStation1_CTXT");
 	By to = By.xpath("//div[@id='ControlGroupSearchView_AvailabilitySearchInputSearchViewdestinationStation1_CTNR']");
-	By departingTextbox = By.id("custom_date_picker_id_1");
-	By departingDate = By.xpath("//*[@id='ui-datepicker-div']//div[@class='ui-datepicker-group ui-datepicker-group-first']");
-	By datefinder = By.xpath("//div[@class='ui-datepicker-group ui-datepicker-group-first']");
 	By returningDate = By.xpath("//input[@id='custom_date_picker_id_2']");
 	By noOfPassengers = By.id("divpaxinfo");
+	By noOfAdults = By.xpath("//div[@class='ad-row-right']//span[@id='spanAudlt']");
 	By currency = By.id("ControlGroupSearchView_AvailabilitySearchInputSearchView_DropDownListCurrency");
 	By search = By.id("ControlGroupSearchView_AvailabilitySearchInputSearchView_ButtonSubmit");
 	By discount = By.id("divdiscountcheckbox");
-	By departingDatePicker = By.id("ui-datepicker-div");
 	By yearPicker = By.xpath("//div[@class='ui-datepicker-group ui-datepicker-group-first']//*[@class='ui-datepicker-title']//span[@class='ui-datepicker-year']");
 	By monthPicker = By.xpath("//div[@class='ui-datepicker-group ui-datepicker-group-first']//*[@class='ui-datepicker-title']//span[@class='ui-datepicker-month']");
 	By datePicker = By.xpath("//div[@class='ui-datepicker-group ui-datepicker-group-first']");
 	By next = By.xpath("//div[@class='ui-datepicker-group ui-datepicker-group-last']//a[@title='Next']");
+	By addNoOfAdults = By.id("hrefIncAdt");
+	By passengersBtn = By.id("btnclosepaxoption");
 	
 	public HomePage(WebDriver driver) {
 		this.driver = driver;
@@ -33,20 +31,12 @@ public class HomePage {
 		return driver.findElement(travelOptions);
 	}
 	
-	public WebElement getToTextBox() {
-		return driver.findElement(toTextbox);
-	}
-	
 	public WebElement getFrom() {
 		return driver.findElement(from);
 	}
 	
 	public WebElement getTo() {
 		return driver.findElement(to);
-	}
-	
-	public WebElement getDepartingDate() {
-		return driver.findElement(departingDate);
 	}
 	
 	public WebElement getReturningDate() {
@@ -69,18 +59,6 @@ public class HomePage {
 		return driver.findElement(discount);
 	}
 	
-	public WebElement getDepartingTextbox() {
-		return driver.findElement(departingTextbox);
-	}
-	
-	public WebElement getDepartingDatePicker() {
-		return driver.findElement(departingDatePicker);
-	}
-	
-	public WebElement getDatefinder() {
-		return driver.findElement(datefinder);
-	}
-	
 	public WebElement getYearPicker() {
 		return driver.findElement(yearPicker);
 	}
@@ -95,5 +73,17 @@ public class HomePage {
 	
 	public WebElement getDatePicker() {
 		return driver.findElement(datePicker);
+	}
+	
+	public WebElement getNoOfAdults() {
+		return driver.findElement(noOfAdults);
+	}
+	
+	public WebElement getAddNoOfAdults() {
+		return driver.findElement(addNoOfAdults);
+	}
+	
+	public WebElement getPassengersBtn() {
+		return driver.findElement(passengersBtn);
 	}
 }

@@ -1,14 +1,10 @@
 package FlightBooking;
 
+import java.io.IOException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -29,36 +25,58 @@ public class BookingTest extends Base{
 	}
 	
 	@Test
-	public void roundTripBooking() throws InterruptedException {
-		String origin = "Bengaluru (BLR)";
-		String destination = "BOM";
-		String departingDate = "23";
-		String departingMonth = "May";
-		String departingYear = "2019";
-
-		String returningDate = "08-03-2019";
-		String travelOption = "RoundTrip";
-		String currency = "USD";
+	@Parameters({"travelOption", "origin", "destination", "departingDate", "departingMonth", "departingYear", "returningDate", "returningMonth", "returningYear", "expectedPass", "currency", "dicountPromo"})
+	public void roundTripBooking(String travelOption, String origin, String destination, String departingDate, String departingMonth, String departingYear, String returningDate, String returningMonth, String returningYear, int expectedPass, String currency, String dicountPromo) throws InterruptedException, IOException {
+	
+		//Properties prop = new Properties();
+		//FileInputStream ifs = new FileInputStream("C:\\workSpace\\Spicejet\\src\\test\\java\\FlightBooking\\datadriven.properties");
+		//prop.load(ifs);
 		driver.manage().window().maximize();
+		
 		hp.getTravelOptions().findElement(By.xpath("//input[@value='"+travelOption+"']")).click();
 		hp.getFrom().click();
 		hp.getFrom().findElement(By.xpath("//a[@text='"+origin+"']")).click();
-		WebElement element=hp.getTo().findElement(By.xpath("//a[@value='BOM']"));
+		WebElement element=hp.getTo().findElement(By.xpath("//a[@value='"+destination+"']"));
 		JavascriptExecutor js = (JavascriptExecutor)driver;
 		js.executeScript("arguments[0].click();", element);
 	
 		flightDateFinder(departingDate, departingMonth, departingYear);
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		hp.getReturningDate().click();
-		flightDateFinder(departingDate, departingMonth, departingYear);
+		Thread.sleep(2000);
+		flightDateFinder(returningDate, returningMonth, returningYear);
+		hp.getNoOfPasangers().click();
+			
+		Thread.sleep(2000);
+		addNoOfPasengers(expectedPass);
+		
+		Select selectCurrency = new Select(hp.getCurrency());
+		selectCurrency.selectByValue(currency);
+				
+		hp.getDiscountCheckBox().findElement(By.xpath("//*[contains(@id,'"+dicountPromo+"')]/preceding-sibling::input")).click();
+		hp.getSearchBtn().click();
 	}
 
-	public void flightDateFinder(String departingDate, String departingMonth, String departingYear) {
+	
+	public void addNoOfPasengers(int expectedPass) {
+		int pass = 1;
+		while(pass==1) { 
+			int actualPass=Integer.parseInt(hp.getNoOfAdults().getText());
+			if(expectedPass==actualPass) {
+				pass=0;
+				break;
+			}
+			hp.getAddNoOfAdults().click();
+		}
+		hp.getPassengersBtn().click();
+	}
+
+	public void flightDateFinder(String Date, String Month, String Year) {
 		int flag = 0;
 		while(flag==0) {
 			WebElement yy;
 			yy = hp.getYearPicker();
-			if(yy.getText().equalsIgnoreCase(departingYear)) {
+			if(yy.getText().equalsIgnoreCase(Year)) {
 				flag=1;
 				break;
 			}
@@ -67,13 +85,15 @@ public class BookingTest extends Base{
 		while(flag==1) {
 			WebElement mm;
 			mm = hp.getMonthPicker();
-			if(mm.getText().equalsIgnoreCase(departingMonth)) {
+			if(mm.getText().equalsIgnoreCase(Month)) {
 				flag=0;
 				break;
 			}
 			hp.getNext().click();		
 			}
 		
-		hp.getDatePicker().findElement(By.xpath("//*//a[text()='"+departingDate+"']")).click();
+		WebElement element = hp.getDatePicker().findElement(By.xpath("//*//a[text()='"+Date+"']"));
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeScript("arguments[0].click();", element);
 	}
 }
