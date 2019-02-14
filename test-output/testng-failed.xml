@@ -4,7 +4,7 @@
   <parameter name="origin" value="Bengaluru (BLR)"/>
   <parameter name="destination" value="BOM"/>
   <parameter name="departingYear" value="2019"/>
-  <parameter name="returningDate" value="03"/>
+  <parameter name="returningDate" value="3"/>
   <parameter name="departingDate" value="23"/>
   <parameter name="dicountPromo" value="student"/>
   <parameter name="travelOption" value="RoundTrip"/>
@@ -16,12 +16,13 @@
   <parameter name="returningMonth" value="July"/>
   <test name="Test(failed)">
     <classes>
-      <class name="FlightBooking.BookingTest">
+      <class name="TestRunner.CucumberOption">
         <methods>
-          <include name="roundTripBooking" invocation-numbers="0"/>
-          <include name="setup"/>
+          <include name="setUpClass"/>
+          <include name="feature" invocation-numbers="0"/>
+          <include name="tearDownClass"/>
         </methods>
-      </class> <!-- FlightBooking.BookingTest -->
+      </class> <!-- TestRunner.CucumberOption -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

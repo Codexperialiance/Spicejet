@@ -1,0 +1,1 @@
+2019-Feb-13 23:31:12 PM [Forwarding getElementText on session 2414633d97c2c9585d8c13fcf6188b0b to remote] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 0][route: {}->http://localhost:1296][total kept alive: 1; route allocated: 1 of 2000; total allocated: 1 of 2000]

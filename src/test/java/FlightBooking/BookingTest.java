@@ -1,6 +1,10 @@
 package FlightBooking;
 
 import java.io.IOException;
+
+import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -8,12 +12,12 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-
 import Resources.Base;
 
 public class BookingTest extends Base{
 
 	public HomePage hp;
+	private static Logger  log = LogManager.getLogger(BookingTest.class.getName());
 	
 	@BeforeTest
 	@Parameters("browser")
@@ -27,7 +31,7 @@ public class BookingTest extends Base{
 	@Test
 	@Parameters({"travelOption", "origin", "destination", "departingDate", "departingMonth", "departingYear", "returningDate", "returningMonth", "returningYear", "expectedPass", "currency", "dicountPromo"})
 	public void roundTripBooking(String travelOption, String origin, String destination, String departingDate, String departingMonth, String departingYear, String returningDate, String returningMonth, String returningYear, int expectedPass, String currency, String dicountPromo) throws InterruptedException, IOException {
-	
+		BasicConfigurator.configure();
 		//Properties prop = new Properties();
 		//FileInputStream ifs = new FileInputStream("C:\\workSpace\\Spicejet\\src\\test\\java\\FlightBooking\\datadriven.properties");
 		//prop.load(ifs);
@@ -55,6 +59,7 @@ public class BookingTest extends Base{
 				
 		hp.getDiscountCheckBox().findElement(By.xpath("//*[contains(@id,'"+dicountPromo+"')]/preceding-sibling::input")).click();
 		hp.getSearchBtn().click();
+		log.info("Flight Booking Test Completed Successfully!");
 	}
 
 	
