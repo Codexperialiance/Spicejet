@@ -11,14 +11,14 @@ import org.testng.ITestListener;
 import org.testng.ITestResult;
 
 import Resources.Base;
+import Resources.CaptureScreenshot;
 
-public class Listeners extends Base implements ITestListener {
+public class Listeners implements ITestListener {
 
 	@Override
 	public void onTestFailure(ITestResult arg0) {
-		File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		try {
-			FileUtils.getFileUtils().copyFile(scrFile, new File("C:\\workSpace\\Spicejet\\ScreenShots\\screenshot.png"));
+			CaptureScreenshot.capture(arg0.getName());
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -33,8 +33,12 @@ public class Listeners extends Base implements ITestListener {
 
 	@Override
 	public void onTestSuccess(ITestResult arg0) {
-		// TODO Auto-generated method stub
-		
+		try {
+			CaptureScreenshot.capture(arg0.getName());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Override

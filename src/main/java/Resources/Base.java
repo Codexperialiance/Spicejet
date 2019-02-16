@@ -8,7 +8,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class Base {
 
-	public WebDriver driver;
+	public static WebDriver driver;
 	
 	public void browserSetup(String browser) {
 		if(browser.contains("chrome")){
