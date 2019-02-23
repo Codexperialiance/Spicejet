@@ -1,19 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <parameter name="origin" value="Bengaluru (BLR)"/>
-  <parameter name="destination" value="BOM"/>
-  <parameter name="departingYear" value="2019"/>
-  <parameter name="returningDate" value="3"/>
-  <parameter name="departingDate" value="23"/>
-  <parameter name="dicountPromo" value="student"/>
-  <parameter name="travelOption" value="RoundTrip"/>
-  <parameter name="browser" value="chrome"/>
-  <parameter name="departingMonth" value="May"/>
-  <parameter name="currency" value="USD"/>
-  <parameter name="expectedPass" value="3"/>
-  <parameter name="returningYear" value="2019"/>
-  <parameter name="returningMonth" value="July"/>
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <listeners>
+    <listener class-name="FlightBooking.Listeners"/>
+  </listeners>
   <test name="Test(failed)">
     <classes>
       <class name="TestRunner.CucumberOption">
