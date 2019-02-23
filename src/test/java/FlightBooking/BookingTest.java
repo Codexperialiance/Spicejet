@@ -32,9 +32,6 @@ public class BookingTest extends Base{
 	@Parameters({"travelOption", "origin", "destination", "departingDate", "departingMonth", "departingYear", "returningDate", "returningMonth", "returningYear", "expectedPass", "currency", "dicountPromo"})
 	public void roundTripBooking(String travelOption, String origin, String destination, String departingDate, String departingMonth, String departingYear, String returningDate, String returningMonth, String returningYear, int expectedPass, String currency, String dicountPromo) throws InterruptedException, IOException {
 		BasicConfigurator.configure();
-		//Properties prop = new Properties();
-		//FileInputStream ifs = new FileInputStream("C:\\workSpace\\Spicejet\\src\\test\\java\\FlightBooking\\datadriven.properties");
-		//prop.load(ifs);
 		driver.manage().window().maximize();
 		
 		hp.getTravelOptions().findElement(By.xpath("//input[@value='"+travelOption+"']")).click();
