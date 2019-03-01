@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="37079" started-at="2019-03-01T00:51:49Z" finished-at="2019-03-01T00:52:26Z">
+  <suite name="Suite" duration-ms="35684" started-at="2019-03-01T01:08:10Z" finished-at="2019-03-01T01:08:45Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="37079" started-at="2019-03-01T00:51:49Z" finished-at="2019-03-01T00:52:26Z">
+    <test name="Test" duration-ms="35684" started-at="2019-03-01T01:08:10Z" finished-at="2019-03-01T01:08:45Z">
       <class name="FlightBooking.BookingTest">
-        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:FlightBooking.BookingTest@4c371370]" name="setup" is-config="true" duration-ms="11654" started-at="2019-02-28T16:51:49Z" finished-at="2019-02-28T16:52:01Z">
+        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:FlightBooking.BookingTest@4c371370]" name="setup" is-config="true" duration-ms="11573" started-at="2019-02-28T17:08:10Z" finished-at="2019-02-28T17:08:21Z">
           <params>
             <param index="0">
               <value>
@@ -18,7 +18,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="roundTripBooking(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, int, java.lang.String, java.lang.String)[pri:0, instance:FlightBooking.BookingTest@4c371370]" name="roundTripBooking" duration-ms="23170" started-at="2019-02-28T16:52:01Z" finished-at="2019-02-28T16:52:24Z">
+        <test-method status="PASS" signature="roundTripBooking(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, int, java.lang.String, java.lang.String)[pri:0, instance:FlightBooking.BookingTest@4c371370]" name="roundTripBooking" duration-ms="22788" started-at="2019-02-28T17:08:21Z" finished-at="2019-02-28T17:08:44Z">
           <params>
             <param index="0">
               <value>
